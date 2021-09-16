@@ -25,11 +25,11 @@ x, y = 1, 1
 
 def main():
     # 1. tell user where he can go
-    while x != 3 and y != 1: 
-        where_you_can_travel(x, y)
+    # while x != 3 and y != 1: 
+    where_you_can_travel(x, y)
     
     # 2. ask user where he wants to go
-        input1(valid_direction)
+    input1(where_you_can_travel)
     # 3. verify input is valid
     # 4a. if valid: move
     # 4b. else: punsih user go agane
@@ -37,13 +37,7 @@ def main():
         print("Victory!")
     # 5. check if destination reached while not tile 7
     
-    pass
-    
-
-
-def location(l):
-    
-    return l
+        pass  
 
 def where_you_can_travel(x, y):
     if x == 1 and y == 1:
@@ -74,9 +68,9 @@ def where_you_can_travel(x, y):
         valid_direction = "w".casefold(), "s".casefold()
     return(valid_direction)
 
-def input1():
+def input1(path):
     way = input("Direction: ".casefold())
-    if way == valid_direction:
+    if way == path:
         if way == "n":
             y + 1
         elif way == "s":
@@ -86,11 +80,10 @@ def input1():
         elif way == "w":
             x - 1
     else:
-        print("Invalid Direction:")
+        print("Invalid Direction.")
 
     return way
 
-
-
-
 main()
+
+print(where_you_can_travel(x, y))
