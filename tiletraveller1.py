@@ -41,7 +41,7 @@ def main():
 
 def where_you_can_travel(x, y):
     if x == 1 and y == 1:
-        print("You can travel: (N)orth. ")
+        print("You can travel: (N)orth.")
         valid_direction = "n".casefold()
     elif x == 1 and y == 2:
         print("You can travel: (N)orth or (E)ast or (S)outh.")
@@ -81,11 +81,10 @@ def input1(x, y):
         elif way == "w":
             x -= 1
     else:
-        print("Direction: Not a valid direction.")
+        print("Not a valid direction!")
     return(x, y)
 
 main()
 
 # print(where_you_can_travel(x, y))
 # print(input1(1,1, "n"))
-
