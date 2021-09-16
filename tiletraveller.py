@@ -19,22 +19,23 @@
 
 
 valid_direction = 0
-x, y = 1, 1
-    
+x = 1
+y = 1   
 
 
 def main():
     # 1. tell user where he can go
     # while x != 3 and y != 1: 
-    where_you_can_travel(x, y)
+    while x != 3 and y != 1:
+        where_you_can_travel(x, y)
     
     # 2. ask user where he wants to go
-    input1(where_you_can_travel)
+        input1(x, y)
     # 3. verify input is valid
     # 4a. if valid: move
-    # 4b. else: punsih user go agane
-    if x == 3 and y == 1:
-        print("Victory!")
+    # 4b. else: punish user gg go agane
+    #else:
+    #    print("Victory!")
     # 5. check if destination reached while not tile 7
     
         pass  
@@ -68,22 +69,32 @@ def where_you_can_travel(x, y):
         valid_direction = "w".casefold(), "s".casefold()
     return(valid_direction)
 
-def input1(path):
+def input1(x, y, path):
     way = input("Direction: ".casefold())
-    if way == path:
+    if way in path:
         if way == "n":
-            y + 1
+            y += 1
         elif way == "s":
-            y - 1
+            y =- 1
         elif way == "e":
-            x + 1
+            x += 1
         elif way == "w":
-            x - 1
+            x -= 1
     else:
         print("Invalid Direction.")
 
-    return way
+    return x, y
 
 main()
 
-print(where_you_can_travel(x, y))
+# print(where_you_can_travel(x, y))
+# print(input1(1,1, "n"))
+
+while True:
+    where_you_can_travel(x, y)
+    
+    # 2. ask user where he wants to go
+    input1(x, y, where_you_can_travel)
+    # 3. verify input is valid
+    # 4a. if valid: move
+    # 4b. else: punish user gg go agane
